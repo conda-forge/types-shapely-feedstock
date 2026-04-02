@@ -1,15 +1,15 @@
 schema_version: 1
 
 context:
-  version: "2.1.0.20250917"
+  version: "2.1.0.20260402"
 
 package:
   name: types-shapely
   version: ${{ version }}
 
 source:
-- url: https://pypi.org/packages/source/t/types-shapely/types_shapely-${{ version }}.tar.gz
-  sha256: 5c56670742105aebe40c16414390d35fcaa55d6f774d328c1a18273ab0e2134a
+  - url: https://pypi.org/packages/source/t/types-shapely/types_shapely-${{ version }}.tar.gz
+    sha256: 0eb592328170433b4724430a64c309bf07ba69d5d11489d3dba21382d78f5297
 
 build:
   number: 0
@@ -18,31 +18,31 @@ build:
 
 requirements:
   host:
-  - python ${{ python_min }}.*
-  - setuptools >=77.0.3
-  - pip
+    - python ${{ python_min }}.*
+    - setuptools >=77.0.3
+    - pip
   run:
-  - python >=${{ python_min }}
-  - numpy >=1.20
+    - python >=${{ python_min }}
+    - numpy >=1.20
 
 tests:
-- package_contents:
-    files:
-    - site-packages/shapely-stubs/*.pyi
-    - site-packages/shapely-stubs/__init__.pyi
-- requirements:
-    run:
-    - pip
-    - python ${{ python_min }}.*
-  script: pip check
-- requirements:
-    run:
-    - mypy
-    - pip
-    - shapely
-  script:
-  - pip check
-  - mypy -p shapely
+  - package_contents:
+      files:
+        - site-packages/shapely-stubs/*.pyi
+        - site-packages/shapely-stubs/__init__.pyi
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script: pip check
+  - requirements:
+      run:
+        - mypy
+        - pip
+        - shapely
+    script:
+      - pip check
+      - mypy -p shapely
 
 about:
   summary: Typing stubs for shapely
