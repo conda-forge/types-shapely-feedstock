@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2.1.0.20260402"
+  version: "2.1.0.20260408"
 
 package:
   name: types-shapely
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/t/types-shapely/types_shapely-${{ version }}.tar.gz
-    sha256: 0eb592328170433b4724430a64c309bf07ba69d5d11489d3dba21382d78f5297
+    sha256: 8552549d9429baa52ec4331e43b5db3b334fc3a7f30da48663010b7454b1451c
 
 build:
   number: 0
